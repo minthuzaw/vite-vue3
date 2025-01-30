@@ -1,0 +1,12 @@
+{
+  "useTabs": false,
+  "tabWidth": 2,
+  "vueIndentScriptAndStyle": false,
+  "bracketSameLine": false,
+  "printWidth": 250,
+  "singleQuote": true,
+  "semi": false,
+  "trailingComma": "none",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["usePassThrough"]
+}
