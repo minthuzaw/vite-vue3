@@ -1,5 +1,8 @@
 import axios from 'axios'
 import JsonParseBigInt from 'json-parse-bigint'
+import { useEventBus } from '@/composables/emitter'
+
+const EventBus = useEventBus()
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
@@ -8,21 +11,24 @@ const api = axios.create({
     'X-Requested-With': 'XMLHttpRequest'
   }
 })
+
+api.interceptors.request.use((config) => {
+  /* Set auth token here */
+  config.transformResponse = (data) => data
+  return config
+})
+
 api.interceptors.response.use(
   (response) => JsonParseBigInt(response.data),
   (error) => {
-    alert(error)
+    showToast(error?.message || 'Something went wrong')
   }
 )
 
-export const setAuthToken = (token, lang) => {
-  api.interceptors.request.use((config) => {
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`
-      config.params = { lang }
-    }
-    config.transformResponse = (data) => data
-    return config
+const showToast = (error) => {
+  EventBus.emit('show-toast', {
+    title: error,
+    showToast: true
   })
 }
 

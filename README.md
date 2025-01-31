@@ -2,13 +2,14 @@
 
 ## Features
 
-[Vue3](https://vuejs.org/) `<br>`
-[Vue Composition API](https://vuejs.org/api/composition-api-setup.html) `<br>`
-[Vue Router](https://router.vuejs.org/) - The official router for Vue.js `<br>`
-[Pinia](https://pinia.vuejs.org/) - The Vue Store that you will enjoy using `<br>`
-[Axios](https://axios-http.com/) - Promise based HTTP client for the browser and node.js `<br>`
-[I18ns](https://vue-i18n.intlify.dev/) - Vue I18n is internationalization plugin for Vue.js `<br>`
-[Husky](https://typicode.github.io/husky/) - Modern native git hooks made easy `<br>`
+- [Vue3](https://vuejs.org/)
+- [Vue Composition API](https://vuejs.org/api/composition-api-setup.html)
+- [Vue Router](https://router.vuejs.org/) - The official router for Vue.js
+- [Pinia](https://pinia.vuejs.org/) - The Vue Store that you will enjoy using
+- [Axios](https://axios-http.com/) - Promise based HTTP client for the browser and node.js
+- [I18ns](https://vue-i18n.intlify.dev/) - Vue I18n is internationalization plugin for Vue.js
+- [Husky](https://typicode.github.io/husky/) - Modern native git hooks made easy
+- [Icon](https://fonts.google.com/icons) - Google font icon
 
 ## Recommended IDE Setup
 
