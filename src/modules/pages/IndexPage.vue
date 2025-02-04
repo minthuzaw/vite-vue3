@@ -11,27 +11,40 @@
           </div>
         </div>
       </div>
+
+      <div class="col-span-12 mt-4 flex justify-center">
+        <button @click="$router.push('/components')" class="flex items-center text-sm font-medium text-[#FFA726] transition-colors hover:text-[#FF9800]">
+          Components
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
     </div>
+    <BaseLoading v-if="isLoading" />
   </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useIndexStore } from '@/modules/pages/indexStore'
+import BaseLoading from '@/components/BaseLoading.vue'
 
 const indexStore = useIndexStore()
+const isLoading = ref(false)
 
 onMounted(async () => {
   await fetchPhoto()
 })
 
 const fetchPhoto = async () => {
+  isLoading.value = true
   try {
     await indexStore.fetchPhoto()
     const response = indexStore.photo
     console.log(response)
+    isLoading.value = false
   } catch (error) {
     console.error(error)
+    isLoading.value = false
   }
 }
 </script>

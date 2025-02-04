@@ -4,12 +4,18 @@ import { useLocaleStore } from '@/store/localeStore'
 import Index from '@/modules/pages/IndexPage.vue'
 import NotFound from '@/modules/pages/NotFound.vue'
 import { useEventBus } from '@/composables/emitter'
+import ComponentPage from '@/modules/pages/ComponentPage.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Index',
     component: Index
+  },
+  {
+    path: '/components',
+    name: 'Components',
+    component: ComponentPage
   },
   {
     path: '/not-found',
