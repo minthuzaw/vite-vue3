@@ -1,8 +1,10 @@
 <template>
   <div class="min-w-screen flex-col items-center justify-center overflow-hidden">
+    <!-- Nav Bar -->
     <DetailNavBar />
     <TagComponent />
 
+    <!-- Card -->
     <div class="mt-10 grid w-full justify-center p-2">
       <BaseCard>
         <template #header>
@@ -29,11 +31,15 @@
 
     <BaseLoading v-if="isLoading" />
 
+    <!-- Model Dialog -->
     <ModelDialog v-if="modelDialog" @close="closeCallback" />
+    <!-- Popup Dialog -->
     <PopupDialog v-if="popup" />
 
+    <!-- ListNavBar -->
     <ListNavBar @show="showCallback" />
 
+    <!-- BaseDialog with position-->
     <BaseDialog :title="'Choose Filters'" v-model="bottomDialog">
       <h1>This is a bottom dialog. You can change dialog position using "position" prop.</h1>
 
@@ -63,6 +69,19 @@
         <BaseSkeleton :width="60" :height="15" />
       </div>
     </div>
+
+    <!-- Tag Pannel -->
+    <TagPanel :tabs="tabs" @tab-click="tabClickCallBack">
+      <template #tab-0>
+        <p>This is the content for Tab 1.</p>
+      </template>
+      <template #tab-1>
+        <p>This is the content for Tab 2.</p>
+      </template>
+      <template #tab-2>
+        <p>This is the content for Tab 3.</p>
+      </template>
+    </TagPanel>
   </div>
 </template>
 
@@ -78,6 +97,7 @@ import DetailNavBar from '@/components/DetailNavBar.vue'
 import ListNavBar from '@/components/ListNavBar.vue'
 import BaseDialog from '@/components/BaseDialog.vue'
 import BaseSkeleton from '@/components/BaseSkeleton.vue'
+import TagPanel from '@/components/TagPanel.vue'
 
 const indexStore = useIndexStore()
 const isLoading = ref(false)
@@ -87,12 +107,22 @@ const popup = ref(false)
 const bottomDialog = ref(false)
 const checked = ref('')
 
+const tabs = ref([
+  { title: 'Tab 1', value: '0' },
+  { title: 'Tab 2', value: '1' },
+  { title: 'Tab 3', value: '2' }
+])
+
 const closeCallback = () => {
   modelDialog.value = false
 }
 
 const showCallback = () => {
   bottomDialog.value = true
+}
+
+const tabClickCallBack = (e) => {
+  console.log(e)
 }
 
 onMounted(async () => {
