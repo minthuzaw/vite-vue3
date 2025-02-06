@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen justify-center bg-gray-100">
+  <div class="flex h-screen justify-center">
     <!-- Can be replaced with your own max-width here -->
     <div class="hide-scrollbar box-border flex w-full max-w-[768px] flex-col bg-white">
       <RouterProgressBar />

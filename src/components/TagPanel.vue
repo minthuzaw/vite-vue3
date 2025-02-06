@@ -1,5 +1,5 @@
 <template>
-  <div class="card py-4">
+  <div class="card py-2">
     <div class="flex border-b border-gray-300">
       <button v-for="tab in tabs" :key="tab.value" @click="selectTab(tab.value)" :class="['px-4 py-2', activeTab === tab.value ? 'border-b-2 border-primary text-primary' : 'text-gray-600']">
         {{ tab.title }}

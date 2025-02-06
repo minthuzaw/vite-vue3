@@ -1,6 +1,6 @@
 <template>
   <div
-    class="animate-pulse bg-gray-300"
+    class="flex animate-pulse items-center justify-center bg-gray-300"
     :class="{
       'rounded-full': shape === 'circle',
       rounded: shape === 'rounded',
@@ -11,7 +11,9 @@
       height: height + 'px',
       borderRadius: shape === 'circle' ? '50%' : borderRadius + 'px'
     }"
-  ></div>
+  >
+    <span class="text-center text-gray-500">{{ text }}</span>
+  </div>
 </template>
 
 <script setup>
@@ -32,6 +34,10 @@ defineProps({
   borderRadius: {
     type: Number,
     default: 8
+  },
+  text: {
+    type: String,
+    default: ''
   }
 })
 </script>

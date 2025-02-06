@@ -23,15 +23,15 @@ defineProps({
     type: Array,
     default: () => [
       {
-        name: 'Reward',
+        name: 'Announcement',
         count: 100
       },
       {
-        name: 'Sticker',
+        name: 'Promotion',
         count: 5
       },
       {
-        name: 'Card',
+        name: 'Transaction',
         count: 11
       }
     ]

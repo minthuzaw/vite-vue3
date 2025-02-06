@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto min-w-[430px] p-6">
+  <div class="mx-auto px-2 pb-6" :class="widthClass">
     <div class="border-t-3 rounded-xl border border-t-yellow-500 bg-white p-4 shadow-md hover:shadow-xl">
       <div class="flex items-center">
         <div class="max-w-xl space-y-4">
@@ -18,4 +18,11 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  widthClass: {
+    type: String,
+    default: 'min-w-[430px]'
+  }
+})
+</script>

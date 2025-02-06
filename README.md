@@ -57,3 +57,27 @@ npm run lint
 ```
 npm run format
 ```
+
+### Example Api Fetch
+```
+import { useStore } from '@/store'
+const store = useStore()
+const isLoading = ref(false)
+
+onMounted(async () => {
+  await fetchPhoto()
+})
+
+const fetchPhoto = async () => {
+  isLoading.value = true
+  try {
+    await store.fetchPhoto()
+    const response = store.photo
+    console.log(response)
+    isLoading.value = false
+  } catch (error) {
+    console.error(error)
+    isLoading.value = false
+  }
+}
+```
