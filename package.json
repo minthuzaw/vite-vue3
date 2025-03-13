@@ -10,7 +10,8 @@
     "lint": "eslint . --fix --ignore-pattern .gitignore",
     "format": "prettier .  --write",
     "prepare": "husky",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "make:module": "node generator/script.js"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.23",
