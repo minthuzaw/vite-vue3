@@ -1,5 +1,7 @@
 # Vue 3 + Vite + Tailwind
 
+[![minthuzaw - vite-vue3](https://img.shields.io/badge/minthuzaw-vite--vue3-2ea44f)](https://)
+
 ## Features
 
 - [Vue3](https://vuejs.org/)
